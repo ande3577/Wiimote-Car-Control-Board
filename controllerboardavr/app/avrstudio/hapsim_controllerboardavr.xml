@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<HAPSIM>
+	<General>
+		<Build>1930</Build>
+		<Position>
+			<top>121</top>
+			<bottom>730</bottom>
+			<left>210</left>
+			<right>1168</right>
+		</Position>
+		<StayOnTop>0</StayOnTop>
+		<Target>ATmega328</Target>
+	</General>
+	<Views>
+		<Buttons>
+			<Name>Buttons1</Name>
+			<Position>
+				<top>206</top>
+				<left>685</left>
+			</Position>
+			<Config index="0">
+				<Name>Enc 1</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>3</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="1">
+				<Name>Enc 2</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>3</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="2">
+				<Name>Button2</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>6</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="3">
+				<Name>Button3</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>7</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<TrinaryGroupEnable index="0">0</TrinaryGroupEnable>
+			<TrinaryGroupEnable index="1">0</TrinaryGroupEnable>
+		</Buttons>
+		<LEDs>
+			<Name>LEDs1</Name>
+			<Position>
+				<top>1</top>
+				<left>687</left>
+			</Position>
+			<Config index="0">
+				<Color>Green</Color>
+				<Name>SPD_EN</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>6</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="1">
+				<Color>Red</Color>
+				<Name>FWD_EN</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>1</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="2">
+				<Color>Green</Color>
+				<Name>REV_EN</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>7</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="3">
+				<Color>Red</Color>
+				<Name>DIR_PWM</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>2</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="4">
+				<Color>Blue</Color>
+				<Name>IR_EN</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>0</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+			<Config index="5">
+				<Color>Green</Color>
+				<Name>STATUS</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>5</Bit>
+				</PortPin>
+				<Invert>1</Invert>
+			</Config>
+			<Config index="6">
+				<Color>Red</Color>
+				<Name>ERROR</Name>
+				<PortPin>
+					<Port>PORTD</Port>
+					<Bit>4</Bit>
+				</PortPin>
+				<Invert>1</Invert>
+			</Config>
+			<Config index="7">
+				<Color>Green</Color>
+				<Name>Unused</Name>
+				<PortPin>
+					<Port>PORTB</Port>
+					<Bit>1</Bit>
+				</PortPin>
+				<Invert>0</Invert>
+			</Config>
+		</LEDs>
+		<Terminal>
+			<Name>USART0</Name>
+			<Position>
+				<top>3</top>
+				<left>4</left>
+				<width>678</width>
+				<height>518</height>
+			</Position>
+			<Interface>USART0</Interface>
+			<localEcho>0</localEcho>
+			<redirectEnable>0</redirectEnable>
+			<Redirection>
+				<Port>COM7</Port>
+				<Baudrate>115200</Baudrate>
+				<Parity>None</Parity>
+				<Stopbits>1</Stopbits>
+				<Flowcontrol>None</Flowcontrol>
+			</Redirection>
+		</Terminal>
+	</Views>
+</HAPSIM>

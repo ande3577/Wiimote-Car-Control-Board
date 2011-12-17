@@ -1,0 +1,5 @@
+read
+avrdude -p m168 -c avr109 -P com7 -b 115200 -U flash:r:blah.hex:i
+
+write
+avrdude -p m168 -c avr109 -P com7 -b 115200 -e -U flash:w:controllerboardavr.hex
