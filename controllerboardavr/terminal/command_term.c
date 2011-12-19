@@ -10,16 +10,18 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "hw.h"
+#include "../config.h"
+
+#include "hal_avr/hw.h"
 #include "command.h"
-#include "error.h"
-#include "comm.h"
-#include "program_info.h"
-#include "tasks.h"
-#include "timestamp.h"
-#include "ring_buffer.h"
-#include "timer.h"
-#include "motor.h"
+#include "utility/error.h"
+#include "hal_avr/comm.h"
+#include "utility/tasks.h"
+#include "utility/timestamp.h"
+#include "utility/ring_buffer.h"
+#include "hal_avr/timer.h"
+#include "modules/motor.h"
+
 
 uint16_t rx_count = 0;
 uint32_t rx_timestamp;
@@ -54,8 +56,7 @@ uint16_t send_response_P(const char *fmt, ...)
 
 int8_t send_program_info(char separator)
 {
-	send_response_P(PSTR("%s%c"), PROGRAM_NAME, separator);
-	send_response_P(PSTR("v: %s%c"), PROGRAM_VERSION, separator);
+	send_response_P(PSTR("%s%c"), PACKAGE_STRING, separator);
 	send_response_P(PSTR("Built: %s "), __DATE__);
 	send_response_P(PSTR(" %s%c"), __TIME__, separator);
 	return ERR_NONE;

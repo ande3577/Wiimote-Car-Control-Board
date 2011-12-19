@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <avr/interrupt.h>
 
-#include "encoder.h"
+#include "modules/encoder.h"
 
 ISR(INT1_vect)
 {

@@ -8,7 +8,7 @@
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
 #include <stdbool.h>
-#include "config.h"
+#include "../common/platform.h"
 
 volatile bool woken = false;
 

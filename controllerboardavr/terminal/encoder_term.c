@@ -6,8 +6,8 @@
  */
 
 #include "command.h"
-#include "encoder.h"
-#include "config.h"
+#include "modules/encoder.h"
+#include "../common/platform.h"
 
 #include <string.h>
 

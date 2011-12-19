@@ -8,7 +8,7 @@
 #ifndef STATUS_LED_H_
 #define STATUS_LED_H_
 
-#include "led.h"
+#include "utility/led.h"
 
 void status_led_init(void);
 

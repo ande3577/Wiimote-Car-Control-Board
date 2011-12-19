@@ -10,11 +10,11 @@
 #include <util/crc16.h>
 #include "nvm.h"
 #include "hw.h"
-#include "error.h"
+#include "utility/error.h"
 #include "comm.h"
-#include "timestamp.h"
-#include "motor.h"
-#include "config.h"
+#include "utility/timestamp.h"
+#include "modules/motor.h"
+#include "../common/platform.h"
 
 #if !_FAST_DEBUG
 EEMEM nvm_t ee_nvm_data = {DEFAULT_DIRECTION_NULL_VALUE, DEFAULT_MOTOR_TIMEOUT };

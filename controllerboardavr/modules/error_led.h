@@ -8,7 +8,7 @@
 #ifndef ERROR_LED_H_
 #define ERROR_LED_H_
 
-#include "led.h"
+#include "utility/led.h"
 
 #define SOLID_ERROR_LED_CODE -64
 

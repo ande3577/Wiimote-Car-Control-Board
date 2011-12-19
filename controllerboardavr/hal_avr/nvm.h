@@ -9,7 +9,7 @@
 #define NVM_H_
 
 #include <stdint.h>
-#include "motor.h"
+#include "modules/motor.h"
 
 extern nvm_t nvm_data;
 

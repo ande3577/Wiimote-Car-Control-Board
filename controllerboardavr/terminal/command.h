@@ -9,8 +9,8 @@
 #define COMMAND_H_
 
 #include <stdint.h>
-#include "config.h"
-#include "error.h"
+#include "../common/platform.h"
+#include "utility/error.h"
 
 #define COMMAND_PARSE_SIZE RX_BUFFER_SIZE
 

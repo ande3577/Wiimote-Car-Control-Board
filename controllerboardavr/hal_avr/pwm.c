@@ -9,12 +9,12 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 
-#include "motor.h"
+#include "modules/motor.h"
 #include "hw.h"
 #include "comm.h"
-#include "error.h"
-#include "timestamp.h"
-#include "config.h"
+#include "utility/error.h"
+#include "utility/timestamp.h"
+#include "../common/platform.h"
 
 volatile motor_level_t current_motor_levels =
 { 0, DEFAULT_DIRECTION_NULL_VALUE };

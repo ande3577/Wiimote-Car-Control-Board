@@ -6,9 +6,9 @@
  */
 
 
-#include "ir.h"
-#include "error.h"
-#include "config.h"
+#include "modules/ir.h"
+#include "utility/error.h"
+#include "../common/platform.h"
 #include "command.h"
 
 #include <stdio.h>

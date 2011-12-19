@@ -5,9 +5,9 @@
 
 #include <stdint.h>
 #include "ir.h"
-#include "timestamp.h"
-#include "config.h"
-#include "comm.h"
+#include "utility/timestamp.h"
+#include "../common/platform.h"
+#include "hal_avr/comm.h"
 
 bool ir_led = false;
 

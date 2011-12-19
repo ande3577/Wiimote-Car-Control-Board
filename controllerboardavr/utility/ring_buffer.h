@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 #include "error.h"
-#include "config.h"
+#include "../common/platform.h"
 
 int16_t ring_put(buffer_data_t value, volatile buffer_data_t *buffer,
 		buffer_index_t buffer_size, volatile buffer_index_t *head, volatile buffer_index_t *tail);

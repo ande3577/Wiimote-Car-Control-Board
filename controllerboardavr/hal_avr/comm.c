@@ -6,13 +6,13 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+#include "utility/error.h"
+#include "utility/timestamp.h"
 
 #include "hw.h"
-#include "error.h"
 #include "comm.h"
-#include "timestamp.h"
 #include "sleep.h"
-#include "config.h"
+#include "../common/platform.h"
 
 #if _DEBUG
 char temp_comm_buffer[TX_BUFFER_SIZE] =

@@ -8,11 +8,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "error.h"
+#include "utility/error.h"
 #include "error_led.h"
-#include "timestamp.h"
-#include "config.h"
-#include "comm.h"
+#include "utility/timestamp.h"
+#include "../common/platform.h"
+#include "hal_avr/comm.h"
 
 LedState_t error_led_state;
 

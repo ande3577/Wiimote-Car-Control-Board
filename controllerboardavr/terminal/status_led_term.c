@@ -5,11 +5,11 @@
  *      Author: desertfx5
  */
 
-#include "status_led.h"
-#include "error.h"
-#include "config.h"
+#include "modules/status_led.h"
+#include "utility/error.h"
+#include "../common/platform.h"
 #include "command.h"
-#include "timestamp.h"
+#include "utility/timestamp.h"
 
 #include <stdio.h>
 #include <string.h>

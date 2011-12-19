@@ -1,0 +1,132 @@
+
+**** Build of configuration Debug for project controllerboardavr ****
+
+****  WARNING: The "Debug" Configuration may not build  ****
+****  because it uses the "MinGW GCC"  ****
+****  tool-chain that is unsupported on this system.  ****
+
+****  Attempting to build...  **** 
+
+make avrsimrelease 
+make -C utility avrsimrelease
+make[1]: Entering directory `/home/dsanderson/workspace_temp/controllerboardavr/utility'
+
+Compiling ring_buffer.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" ring_buffer.c -o ring_buffer.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" ring_buffer.c > ring_buffer.d
+
+Compiling error.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" error.c -o error.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" error.c > error.d
+
+Compiling pid.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" pid.c -o pid.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" pid.c > pid.d
+
+Compiling timestamp.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" timestamp.c -o timestamp.o
+avr-ar: creating libutility.a
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" timestamp.c > timestamp.d
+
+Compiling debounce.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" debounce.c -o debounce.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" debounce.c > debounce.d
+
+Linking libutility.a
+avr-ar rs libutility.a ring_buffer.o error.o pid.o timestamp.o debounce.o  
+avr-nm  --format=posix libutility.a > utility.map
+make[1]: Leaving directory `/home/dsanderson/workspace_temp/controllerboardavr/utility'
+make -C modules avrsimrelease
+make[1]: Entering directory `/home/dsanderson/workspace_temp/controllerboardavr/modules'
+
+Compiling comm.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" comm.c -o comm.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" comm.c > comm.d
+
+Compiling hw.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" hw.c -o hw.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" hw.c > hw.d
+
+Compiling Initialize.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" Initialize.c -o Initialize.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" Initialize.c > Initialize.d
+
+Compiling ir.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" ir.c -o ir.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" ir.c > ir.d
+
+Compiling status_led.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" status_led.c -o status_led.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" status_led.c > status_led.d
+
+Compiling motor.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" motor.c -o motor.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" motor.c > motor.d
+
+Compiling sensor.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" sensor.c -o sensor.o
+avr-ar: creating libmodules.a
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" sensor.c > sensor.d
+
+Compiling timer.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" timer.c -o timer.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" timer.c > timer.d
+
+Compiling watchdog.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" watchdog.c -o watchdog.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" watchdog.c > watchdog.d
+
+Compiling pushbutton.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" pushbutton.c -o pushbutton.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" pushbutton.c > pushbutton.d
+
+Compiling lcd.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" lcd.c -o lcd.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" lcd.c > lcd.d
+
+Compiling hd44780.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" hd44780.c -o hd44780.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" hd44780.c > hd44780.d
+
+Compiling error_led.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" error_led.c -o error_led.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" error_led.c > error_led.d
+
+Linking libmodules.a
+avr-ar rs libmodules.a comm.o hw.o Initialize.o ir.o status_led.o motor.o sensor.o timer.o watchdog.o pushbutton.o lcd.o hd44780.o error_led.o  
+avr-nm  --format=posix libmodules.a > modules.map
+make[1]: Leaving directory `/home/dsanderson/workspace_temp/controllerboardavr/modules'
+make -C app avrsimrelease
+make[1]: Entering directory `/home/dsanderson/workspace_temp/controllerboardavr/app'
+
+Compiling command.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" command.c -o command.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" command.c > command.d
+
+Compiling main.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" main.c -o main.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" main.c > main.d
+
+Compiling tasks.c
+avr-gcc -c  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" tasks.c -o tasks.o
+avr-gcc -MM  -Wall -mmcu=atmega644  -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -O2  -DF_CPU=14745600 -I../modules/  -I../utility/  -gdwarf-2 -D_FAST_DEBUG=1 -D__GCC__=\"avr-gcc\" tasks.c > tasks.d
+
+Linking controllerboardavr.elf
+avr-g++  -mmcu=atmega644 -Wl,--gc-sections -T ../link/avr/atmega644.x -o controllerboardavr.elf command.o main.o tasks.o   -Wl,-u,vfprintf -lprintf_min -Wl,-u,vfscanf -lscanf_min -L../modules/ -lmodules -L../utility/ -lutility
+avr-size --format=avr --mcu=atmega644 controllerboardavr.elf
+AVR Memory Usage
+----------------
+Device: atmega644
+
+Program:   10974 bytes (16.7% Full)
+(.text + .data + .bootloader)
+
+Data:        755 bytes (18.4% Full)
+(.data + .bss + .noinit)
+
+
+avr-nm  --format=posix controllerboardavr.elf > controllerboardavr.map
+avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature controllerboardavr.elf controllerboardavr.hex
+make[1]: Leaving directory `/home/dsanderson/workspace_temp/controllerboardavr/app'
+
+**** Build Finished ****

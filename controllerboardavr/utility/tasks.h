@@ -10,7 +10,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "config.h"
+#include "../common/platform.h"
 
 typedef void (*InitHandler_t)(void);
 typedef void (*RunHandler_t)(uint32_t CurrentTime);

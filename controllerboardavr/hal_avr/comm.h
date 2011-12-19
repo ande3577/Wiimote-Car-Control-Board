@@ -11,8 +11,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <avr/pgmspace.h>
-#include "ring_buffer.h"
-#include "config.h"
+#include "utility/ring_buffer.h"
+#include "../common/platform.h"
 
 
 extern volatile buffer_data_t rx_buffer[];

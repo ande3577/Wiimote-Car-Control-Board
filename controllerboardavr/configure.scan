@@ -1,0 +1,50 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.67])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([error_list.h])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_AWK
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+
+# Checks for libraries.
+# FIXME: Replace `main' with a function in `-lm':
+AC_CHECK_LIB([m], [main])
+# FIXME: Replace `main' with a function in `-lprintf_min':
+AC_CHECK_LIB([printf_min], [main])
+# FIXME: Replace `main' with a function in `-lscanf_min':
+AC_CHECK_LIB([scanf_min], [main])
+
+# Checks for header files.
+AC_CHECK_HEADERS([stddef.h stdint.h string.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_HEADER_STDBOOL
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_INT8_T
+AC_TYPE_SIZE_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT8_T
+
+# Checks for library functions.
+
+AC_CONFIG_FILES([Makefile
+                 Release/makefile
+                 Sim Debug/makefile
+                 app/Makefile
+                 hal_avr/Makefile
+                 modules/Makefile
+                 terminal/Makefile
+                 utility/Makefile])
+AC_OUTPUT

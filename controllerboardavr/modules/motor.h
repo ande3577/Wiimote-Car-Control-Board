@@ -9,7 +9,7 @@
 #define MOTOR_H_
 
 #include <stdint.h>
-#include "config.h"
+#include "../common/platform.h"
 
 #define NUMBER_OF_MOTOR_CHANNELS 2
 

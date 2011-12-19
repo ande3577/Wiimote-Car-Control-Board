@@ -1,10 +1,10 @@
 #include <stdint.h>
 #include <stddef.h>
-#include "error.h"
-#include "timestamp.h"
+#include "utility/error.h"
+#include "utility/timestamp.h"
 #include "motor.h"
 #include "sensor.h"
-#include "comm.h"
+#include "hal_avr/comm.h"
 
 #if _FAST_DEBUG
 

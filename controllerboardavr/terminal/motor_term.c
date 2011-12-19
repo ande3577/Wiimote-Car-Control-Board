@@ -5,12 +5,12 @@
  *      Author: desertfx5
  */
 
-#include "motor.h"
-#include "nvm.h"
-#include "error.h"
-#include "config.h"
+#include "modules/motor.h"
+#include "hal_avr/nvm.h"
+#include "utility/error.h"
+#include "../common/platform.h"
 #include "command.h"
-#include "timestamp.h"
+#include "utility/timestamp.h"
 
 #include <stdio.h>
 #include <string.h>

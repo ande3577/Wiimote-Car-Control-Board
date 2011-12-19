@@ -5,12 +5,13 @@
  *      Author: dsanderson
  */
 
-#include "sensor.h"
-#include "config.h"
 #include <stdint.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
+
+#include "../common/platform.h"
+#include "modules/sensor.h"
 
 #if _DIP_PACKAGE
 const uint8_t PROGMEM sensor_adc_channel[NUMBER_OF_SENSOR_CHANNELS] =

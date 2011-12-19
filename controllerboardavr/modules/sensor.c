@@ -1,8 +1,8 @@
-#include "timestamp.h"
+#include "utility/timestamp.h"
 #include "sensor.h"
-#include "config.h"
-#include "sleep.h"
-#include "hw.h"
+#include "../common/platform.h"
+#include "hal_avr/sleep.h"
+#include "hal_avr/hw.h"
 
 /*!
  @file

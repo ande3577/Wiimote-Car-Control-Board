@@ -5,10 +5,9 @@
  *      Author: ande3577
  */
 
-#include "timestamp.h"
-#include "led.h"
-#include "config.h"
-#include "comm.h"
+#include "utility/timestamp.h"
+#include "utility/led.h"
+#include "hal_avr/comm.h"
 
 LedState_t status_led_state;
 

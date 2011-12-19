@@ -5,10 +5,10 @@
  *      Author: desertfx5
  */
 
-#include "timestamp.h"
+#include "utility/timestamp.h"
 #include "encoder.h"
-#include "config.h"
-#include "hw.h"
+#include "../common/platform.h"
+#include "hal_avr/hw.h"
 
 volatile int32_t encoder_count = 0;
 volatile uint8_t encoder_channel[2] = {0, 0};

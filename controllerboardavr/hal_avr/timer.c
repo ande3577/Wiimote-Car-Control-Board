@@ -10,11 +10,11 @@
 #include <avr/interrupt.h>
 #include <avr/io.h>
 #include "hw.h"
-#include "tasks.h"
 #include "timer.h"
-#include "config.h"
+#include "../common/platform.h"
 #include "sleep.h"
-#include "timestamp.h"
+#include "utility/timestamp.h"
+#include "utility/tasks.h"
 
 #define PRESCALAR 64
 #define TIMER_COUNT ((((uint64_t) TIMER_TICK_MS*F_CPU+500)/1000+PRESCALAR/2)/PRESCALAR - 1)

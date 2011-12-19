@@ -5,9 +5,9 @@
  *      Author: desertfx5
  */
 
-#include "sensor.h"
-#include "error.h"
-#include "config.h"
+#include "modules/sensor.h"
+#include "utility/error.h"
+#include "../common/platform.h"
 #include "command.h"
 
 #include <stdio.h>

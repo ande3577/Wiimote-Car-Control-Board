@@ -8,7 +8,7 @@
 #ifndef ERROR_H_
 #define ERROR_H_
 #include <stdint.h>
-#include "config.h"
+#include "../common/platform.h"
 
 int8_t post_error(int8_t error_code);
 int8_t get_last_error(int32_t *timestamp);
