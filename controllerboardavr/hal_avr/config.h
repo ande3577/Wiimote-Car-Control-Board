@@ -78,44 +78,30 @@
 #endif
 
 //Motor PWM Settings
-#define SPEED_SET_PIN_DDR() DDRD |= ((1<<PD6)|(1<<PD7));DDRB |= (1<<PB1)
+#define SPEED_SET_PIN_DDR() DDRB |= (1<<PB1)
+
+#define DIRECTION_SET_PIN_DDR() DDRB |= (1<<PB2)
 
 // STK500 has leds inverted
 #if !_DEV_BOARD
 
-#define DISABLE_SPEED_PWM_PIN() PORTD &= ~(1 << PD6)
-#define ENABLE_SPEED_PWM_PIN() PORTD |= (1 << PD6)
-
-#define ENABLE_FWD() PORTB |= (1<<PB1)
-#define DISABLE_FWD() PORTB &= ~(1<<PB1)
-
-#define ENABLE_REV() PORTD |= (1<<PD7)
-#define DISABLE_REV() PORTD &= ~(1<<PD7)
-
-#define DIRECTION_SET_PIN_DDR() DDRB |= (1<<PB2)
+#define DISABLE_SPEED_PWM_PIN() PORTB &= ~(1 << PB1)
+#define ENABLE_SPEED_PWM_PIN() PORTB |= (1 << PB1)
 
 #define DISABLE_DIR_PWM_PIN() PORTB &= ~(1 << PB2)
 #define ENABLE_DIR_PWM_PIN() PORTB |= (1 << PB2)
 #else
 
-#define ENABLE_SPEED_PWM_PIN() PORTD &= ~(1 << PD6)
-#define DISABLE_SPEED_PWM_PIN() PORTD |= (1 << PD6)
-
-#define DISABLE_FWD() PORTB |= (1<<PB1)
-#define ENABLE_FWD() PORTB &= ~(1<<PB1)
-
-#define DISABLE_REV() PORTD |= (1<<PD7)
-#define ENABLE_REV() PORTD &= ~(1<<PD7)
-
-#define DIRECTION_SET_PIN_DDR() DDRB |= (1<<PB2)
+#define ENABLE_SPEED_PWM_PIN() PORTB &= ~(1 << PB1)
+#define DISABLE_SPEED_PWM_PIN() PORTB |= (1 << PB1)
 
 #define ENABLE_DIR_PWM_PIN() PORTB &= ~(1 << PB2)
 #define DISABLE_DIR_PWM_PIN() PORTB |= (1 << PB2)
 
 #endif
 
-#define DISABLE_SPEED_PWM() (TCCR0A &= ~(1 << COM0A1))
-#define ENABLE_SPEED_PWM() (TCCR0A |= (1 << COM0A1))
+#define DISABLE_SPEED_PWM() (TCCR1A &= ~(1 << COM1A1))
+#define ENABLE_SPEED_PWM() (TCCR1A |= (1 << COM1A1))
 
 #define DISABLE_DIR_PWM() (TCCR1A &= ~(1 << COM1B1))
 #define ENABLE_DIR_PWM() (TCCR1A |= (1 << COM1B1))
