@@ -265,6 +265,7 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.341842204" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.def.2020321975" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_DIP_PACKAGE=1"/>
+									<listOptionValue builtIn="false" value="_FAST_DEBUG=0"/>
 									<listOptionValue builtIn="false" value="_SKIP_PASSWORD=1"/>
 									<listOptionValue builtIn="false" value="RX_FRAME_TIMEOUT=-1"/>
 									<listOptionValue builtIn="false" value="_DEBUG=1"/>

@@ -19,7 +19,7 @@
 volatile motor_level_t current_motor_levels =
 { 0, DEFAULT_DIRECTION_NULL_VALUE };
 
-void set_speed_motor_pwm_level(int16_t value)
+void set_speed_motor_pwm_level(uint16_t value)
 {
     current_motor_levels.speed_channel_level = value;
     if (MOTOR_LEVEL_BRAKE == value)

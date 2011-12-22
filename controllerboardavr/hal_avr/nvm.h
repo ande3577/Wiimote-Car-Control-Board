@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include "motor.h"
 
-extern nvm_t nvm_data;
+extern motor_parameters_t motor_parameters;
 
 void nvm_init();
 int8_t nvm_save();

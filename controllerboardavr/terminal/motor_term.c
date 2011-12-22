@@ -27,8 +27,9 @@ static int8_t parse_set_motor_command(char *bfr, int8_t bfr_length)
 		ret_val = ERR_NVM_CORRUPT;
 	}
 
-	if (NUMBER_OF_MOTOR_CHANNELS != sscanf_P(bfr, PSTR("SML %s %u"),
-			speed_channel_string, &levels.direction_channel_level))
+	if (NUMBER_OF_MOTOR_CHANNELS
+			!= sscanf_P(bfr, PSTR("SML %s %u"), speed_channel_string,
+					&levels.direction_channel_level))
 	{
 		ret_val = ERR_PARAM;
 	}
@@ -42,8 +43,9 @@ static int8_t parse_set_motor_command(char *bfr, int8_t bfr_length)
 	{
 		if (0 == strcmp_P(speed_channel_string, PSTR("BRK")))
 			levels.speed_channel_level = MOTOR_LEVEL_BRAKE;
-		else if (1 != sscanf_P(speed_channel_string, PSTR("%d"),
-				&levels.speed_channel_level))
+		else if (1
+				!= sscanf_P(speed_channel_string, PSTR("%d"),
+						&levels.speed_channel_level))
 			ret_val = ERR_PARAM;
 		else if ((levels.speed_channel_level > MAX_ABSOLUTE_MOTOR_LEVEL)
 				|| (levels.speed_channel_level < MIN_ABSOLUTE_MOTOR_LEVEL))
@@ -101,16 +103,9 @@ static int8_t parse_set_motor_timeout(char *bfr, int8_t bfr_length)
 	}
 	else
 	{
-		if (0 == set_motor_timeout(timeout))
-		{
-			send_response_P(PSTR(":OK\n"));
-			return 0;
-		}
-		else
-		{
-			send_response_P(PSTR(":ERR EXEC\n"));
-			return ERR_EXEC;
-		}
+		set_motor_timeout(timeout);
+		send_response_P(PSTR(":OK\n"));
+		return ERR_NONE;
 	}
 }
 
@@ -149,8 +144,6 @@ static int8_t parse_get_direction_null_value()
 
 static int8_t parse_save_nvm_params()
 {
-	nvm_data.direction_null_value = get_direction_null_value();
-	nvm_data.motor_timeout = get_motor_timeout();
 	if (ERR_NONE == nvm_save())
 	{
 		send_response_P(PSTR(":OK\n"));
@@ -179,7 +172,7 @@ int8_t parse_motor_command(char *command, char *bfr, uint16_t buffer_size)
 	}
 	else if (0 == strcmp_P(command, PSTR("GMT")))
 	{
-		return parse_get_motor_timeout();//
+		return parse_get_motor_timeout(); //
 	}
 	else if (0 == strcmp_P(command, PSTR("SNV")))
 	{
