@@ -73,6 +73,7 @@ void nvm_init()
 
 #else
 	debug_P(PSTR("NVM Valid @ %lu\n"), get_current_time());
+	motor_parameters = ee_nvm_data;
 	nvm_error_flag = ERR_NONE;
 #endif
 }

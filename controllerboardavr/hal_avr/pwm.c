@@ -16,69 +16,60 @@
 #include "timestamp.h"
 #include "config.h"
 
-void set_speed_motor_pwm_level(uint16_t value)
+#define MOTOR_SPEED_FORWARD_THRESHOLD (MAX_ABSOLUTE_SPEED / 2)
+#define MOTOR_SPEED_REVERSE_THRESHOLD (0 - MOTOR_SPEED_FORWARD_THRESHOLD)
+
+#define MOTOR_DIRECTION_LEFT_THRESHOLD ((DEFAULT_DIRECTION_NULL_VALUE + MIN_ABSOLUTE_DIRECTION) / 2)
+#define MOTOR_DIRECTION_RIGHT_THRESHOLD ((MAX_ABSOLUTE_DIRECTION + DEFAULT_DIRECTION_NULL_VALUE) / 2)
+
+void set_speed_motor_pwm_level(int16_t value)
 {
-	if (value >= MAX_ABSOLUTE_SPEED)
+	if (value > MOTOR_SPEED_FORWARD_THRESHOLD)
 	{
-		ENABLE_SPEED_PWM_PIN();
-		DISABLE_SPEED_PWM();
-		OCR1A = 0;
+		DISABLE_REVERSE_PIN();
+		ENABLE_FORWARD_PIN();
 	}
-	else if (value <= MIN_ABSOLUTE_SPEED)
+	else if (value < MOTOR_SPEED_REVERSE_THRESHOLD)
 	{
-		DISABLE_SPEED_PWM_PIN();
-		DISABLE_SPEED_PWM();
-		OCR1A = 0;
+		DISABLE_FORWARD_PIN();
+		ENABLE_REVERSE_PIN();
 	}
 	else
 	{
-#if _DEV_BOARD
-		OCR1A = MAX_ABSOLUTE_DIRECTION - value;
-#else
-		OCR1A = value;
-#endif
-		ENABLE_SPEED_PWM();
+		DISABLE_FORWARD_PIN();
+		DISABLE_REVERSE_PIN();
 	}
 }
 
 void set_direction_motor_pwm_level(uint16_t value)
 {
-	if (value >= MAX_ABSOLUTE_DIRECTION)
+	if (value > MOTOR_DIRECTION_RIGHT_THRESHOLD)
 	{
-		ENABLE_DIR_PWM_PIN();
-		DISABLE_DIR_PWM();
-		OCR1B = 0;
+		DISABLE_LEFT_PIN();
+		ENABLE_RIGHT_PIN();
 	}
-	else if (value <= MIN_ABSOLUTE_DIRECTION)
+	else if (value < MOTOR_DIRECTION_LEFT_THRESHOLD)
 	{
-		DISABLE_DIR_PWM_PIN();
-		DISABLE_DIR_PWM();
-		OCR1B = 0;
+		DISABLE_RIGHT_PIN();
+		ENABLE_LEFT_PIN();
 	}
 	else
 	{
-#if _DEV_BOARD
-		OCR1B = MAX_ABSOLUTE_DIRECTION - value;
-#else
-		OCR1B = value;
-#endif
-		ENABLE_DIR_PWM();
+		DISABLE_LEFT_PIN();
+		DISABLE_RIGHT_PIN();
 	}
+
 }
 
 void pwm_init(void)
 {
-	TCCR1B = 0;
+	DISABLE_FORWARD_PIN();
+	DISABLE_REVERSE_PIN();
 	SPEED_SET_PIN_DDR();
-	DISABLE_SPEED_PWM_PIN();
-	OCR1A = 0;
 
+	DISABLE_LEFT_PIN();
+	DISABLE_RIGHT_PIN();
 	DIRECTION_SET_PIN_DDR();
-	DISABLE_DIR_PWM_PIN();
-	TCNT1 = 0;
-	OCR1B = 0;
-
-	TCCR1A = (1 << WGM11) | (1 << WGM10);
-	TCCR1B = (1 << WGM12) | (1 << CS10);
+	DIRECTION_SET_PIN_DDR();
 }
 

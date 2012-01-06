@@ -67,9 +67,9 @@
 
 #define DEFAULT_DIRECTION_NULL_VALUE (MAX_ABSOLUTE_DIRECTION/2)
 
-#define MAX_ABSOLUTE_SPEED MAX_ABSOLUTE_DIRECTION
-#define MIN_ABSOLUTE_SPEED MIN_ABSOLUTE_DIRECTION
-#define DEFAULT_SPEED_NULL_VALUE DEFAULT_DIRECTION_NULL_VALUE
+#define MAX_ABSOLUTE_SPEED MAX_ABSOLUTE_MOTOR_LEVEL
+#define MIN_ABSOLUTE_SPEED MIN_ABSOLUTE_MOTOR_LEVEL
+#define DEFAULT_SPEED_NULL_VALUE 0
 
 #if _DEBUG
 #define DEFAULT_MOTOR_TIMEOUT COMPUTE_TICKS(5000)
@@ -78,33 +78,39 @@
 #endif
 
 //Motor PWM Settings
-#define SPEED_SET_PIN_DDR() DDRB |= (1<<PB1)
+#define SPEED_SET_PIN_DDR() DDRD |= (1<<PD6) | (1<<PD7)
 
 #define DIRECTION_SET_PIN_DDR() DDRB |= (1<<PB2)
 
 // STK500 has leds inverted
 #if !_DEV_BOARD
 
-#define DISABLE_SPEED_PWM_PIN() PORTB &= ~(1 << PB1)
-#define ENABLE_SPEED_PWM_PIN() PORTB |= (1 << PB1)
+#define ENABLE_FORWARD_PIN() PORTD |= (1 << PD6)
+#define DISABLE_FORWARD_PIN() PORTD &= ~(1 << PD6)
 
-#define DISABLE_DIR_PWM_PIN() PORTB &= ~(1 << PB2)
-#define ENABLE_DIR_PWM_PIN() PORTB |= (1 << PB2)
+#define ENABLE_REVERSE_PIN() PORTD |= (1 << PD7)
+#define DISABLE_REVERSE_PIN() PORTD &= ~(1 << PD7)
+
+#define ENABLE_LEFT_PIN() PORTB |= (1<<PB1)
+#define DISABLE_LEFT_PIN() PORTB &= ~(1<<PB1)
+
+#define ENABLE_RIGHT_PIN() PORTB |= (1<<PB2)
+#define DISABLE_RIGHT_PIN() PORTB &= ~(1<<PB2)
+
 #else
+#define ENABLE_FORWARD_PIN() PORTD &= ~(1 << PD6)
+#define DISABLE_FORWARD_PIN() PORTD |= (1 << PD6)
 
-#define ENABLE_SPEED_PWM_PIN() PORTB &= ~(1 << PB1)
-#define DISABLE_SPEED_PWM_PIN() PORTB |= (1 << PB1)
+#define ENABLE_REVERSE_PIN() PORTD &= ~(1 << PD7)
+#define DISABLE_REVERSE_PIN() PORTD |= (1 << PD7)
 
-#define ENABLE_DIR_PWM_PIN() PORTB &= ~(1 << PB2)
-#define DISABLE_DIR_PWM_PIN() PORTB |= (1 << PB2)
+#define ENABLE_LEFT_PIN() PORTB &= ~(1<<PB1)
+#define DISABLE_LEFT_PIN() PORTB |= (1<<PB1)
+
+#define ENABLE_RIGHT_PIN() PORTB &= ~(1<<PB2)
+#define DISABLE_RIGHT_PIN() PORTB |= (1<<PB2)
 
 #endif
-
-#define DISABLE_SPEED_PWM() (TCCR1A &= ~(1 << COM1A1))
-#define ENABLE_SPEED_PWM() (TCCR1A |= (1 << COM1A1))
-
-#define DISABLE_DIR_PWM() (TCCR1A &= ~(1 << COM1B1))
-#define ENABLE_DIR_PWM() (TCCR1A |= (1 << COM1B1))
 
 // Sensor Settings
 // The number of channels that have to be read every iteration, rest are round robin
@@ -114,7 +120,7 @@
 #define MAX_SENSOR_LEVEL 1023
 #define MAX_SENSOR_ADC MAX_SENSOR_LEVEL
 
-#define SENSOR_REQUIRED_CHANNELS 2
+#define SENSOR_REQUIRED_CHANNELS 0
 #define SENSOR_REQUIRED_MAX (SENSOR_REQUIRED_CHANNELS-1)
 
 #if (!_DEBUG)

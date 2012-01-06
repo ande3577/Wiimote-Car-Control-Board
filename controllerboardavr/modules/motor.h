@@ -15,9 +15,9 @@
 
 typedef struct
 {
-	uint16_t null_value;
-	uint16_t min_value;
-	uint16_t max_value;
+	int16_t null_value;
+	int16_t min_value;
+	int16_t max_value;
 } motor_channel_paramter_t;
 
 typedef struct
@@ -41,7 +41,7 @@ typedef struct
 
 extern motor_parameters_t motor_parameters;
 
-int8_t set_motor_levels(uint16_t motor_speed_level,
+int8_t set_motor_levels(int16_t motor_speed_level,
 		uint16_t motor_direction_level);
 const motor_level_t *get_motor_levels();
 void set_motor_timeout(int16_t timeout);
@@ -70,7 +70,7 @@ void motor_shutdown(void);
 /// port hal layer must provide function to initialize pwm
 extern void pwm_init(void);
 /// port hal layer must provide function to set speed pwm
-extern void set_speed_motor_pwm_level(uint16_t value);
+extern void set_speed_motor_pwm_level(int16_t value);
 /// port hal must provide function to set motor pwm
 extern void set_direction_motor_pwm_level(uint16_t value);
 /// port hal must provide function to determine whether nvm is corrupt
