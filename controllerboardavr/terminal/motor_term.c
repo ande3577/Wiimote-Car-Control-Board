@@ -94,19 +94,20 @@ static int8_t parse_set_motor_timeout(char *bfr, int8_t bfr_length)
 		return ERR_PARAM;
 	}
 
-	timeout = COMPUTE_TICKS(timeout);
+	if (timeout > 0)
+	{
+		timeout = COMPUTE_TICKS(timeout);
 
-	if (timeout == 0)
-	{
-		send_response_P(PSTR(":ERR PARAM\n"));
-		return ERR_PARAM;
+		if (timeout == 0)
+		{
+			send_response_P(PSTR(":ERR PARAM\n"));
+			return ERR_PARAM;
+		}
 	}
-	else
-	{
-		set_motor_timeout(timeout);
-		send_response_P(PSTR(":OK\n"));
-		return ERR_NONE;
-	}
+
+	set_motor_timeout(timeout);
+	send_response_P(PSTR(":OK\n"));
+	return ERR_NONE;
 }
 
 static int8_t parse_get_motor_timeout()
