@@ -1,4 +1,4 @@
-#Wed Sep 21 14:22:30 CDT 2011
+#Wed Dec 21 00:17:34 CST 2011
 avrtarget/ClockFrequency=14745600
 avrtarget/ExtRAMSize=0
 avrtarget/ExtendedRAM=false
@@ -15,7 +15,7 @@ avrtarget/avrdude/Fuses/ByteValues=222\:176\:252
 avrtarget/avrdude/Fuses/FileName=
 avrtarget/avrdude/Fuses/MCUid=atmega328p
 avrtarget/avrdude/Fuses/UseFile=false
-avrtarget/avrdude/Fuses/Write=false
+avrtarget/avrdude/Fuses/Write=true
 avrtarget/avrdude/NoChipErase=false
 avrtarget/avrdude/NoSigCheck=false
 avrtarget/avrdude/NoVerify=false
